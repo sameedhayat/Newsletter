@@ -45,7 +45,7 @@ def github()  -> list:
 def newsapi() -> list:
     """Fetch top news articles mentioning 'ai agent' from the past week via News API."""
     API_KEY = os.getenv("NEWS_API_KEY")
-    API_KEY = "473a9cfaefd84a5aa22716109475a5c1"
+    
     if not API_KEY:
         raise RuntimeError("Environment variable NEWS_API_KEY not set")
 
