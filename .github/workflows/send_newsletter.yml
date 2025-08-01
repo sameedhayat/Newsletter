@@ -30,12 +30,10 @@ jobs:
           SMTP_USER:      ${{ secrets.SMTP_USER }}
           SMTP_PASS:      ${{ secrets.SMTP_PASS }}
           EMAIL_SENDER:   ${{ secrets.EMAIL_SENDER }}
-          EMAIL_RECIPIENT:${{ secrets.EMAIL_RECIPIENT }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NEWS_API_KEY:   ${{ secrets.NEWS_API_KEY }}
-          S2_API_KEY:     ${{ secrets.S2_API_KEY }}
-          GITHUB_TOKEN:   ${{ secrets.GITHUB_TOKEN }}
           # TWIKIT_* if you’re using Twitter
-          TWIKIT_USERNAME:${{ secrets.TWIKIT_USERNAME }}
+          TWIKIT_USERNAME: ${{ secrets.TWIKIT_USERNAME }}
           TWIKIT_EMAIL:   ${{ secrets.TWIKIT_EMAIL }}
-          TWIKIT_PASSWORD:${{ secrets.TWIKIT_PASSWORD }}
+          TWIKIT_PASSWORD: ${{ secrets.TWIKIT_PASSWORD }}
