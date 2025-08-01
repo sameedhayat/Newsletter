@@ -4,10 +4,6 @@ import requests
 from datetime import datetime, timedelta
 import asyncio
 from twikit import Client
-from dotenv import load_dotenv
-
-# load .env file to environment
-load_dotenv()
 
 # Create a shared FastMCP server instance
 mcp = FastMCP(name="Weekly Newsletter")
