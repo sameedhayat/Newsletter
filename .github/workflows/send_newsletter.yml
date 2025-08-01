@@ -8,6 +8,11 @@ on:
 jobs:
   send_newsletter:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Use a login shell so `conda activate` works as expected
+        shell: bash -l {0}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -22,7 +27,10 @@ jobs:
 
       - name: Verify environment
         run: |
-          conda info
+          echo ">>> Active Conda environment:"
+          conda info --envs
+          echo ">>> Python version and packages:"
+          python --version
           conda list
 
       - name: Fetch & send newsletter
