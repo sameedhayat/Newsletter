@@ -1,0 +1,26 @@
+# 📰 Weekly AI-Agent Newsletter {{ data.keyword }}
+## 📑 Summary
+*{{ summary }}*
+
+## 🗞️ Top News API Articles
+{% for art in data.articles %}
+- **{{ art.title }}** ({{ art.source }}, {{ art.publishedAt }})  
+  {{ art.url }}
+{% if art.tweet_summary %}
+  > _Reactions:_ {{ art.tweet_summary }}
+{% endif %}
+
+  _{{ art.description }}_
+{% endfor %}
+
+## 📚 Top AI-Agent Papers
+{% for p in data.papers %}
+- {{ p.title }} ({{ p.citations }} citations)  
+  {{ p.url }}
+{% endfor %}
+
+## 🛠️ Trending GitHub Repositories
+{% for r in data.repos %}
+- **{{ r.name }}** ({{ r.stars }}⭐)  
+  {{ r.url }}
+{% endfor %}

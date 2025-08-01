@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly AI-Agent Newsletter</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f7; color: #333; margin:0; padding:0; }
+    .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .header { text-align:center; margin-bottom:20px; }
+    .summary { font-style: italic; color:#555; margin-bottom:20px; }
+    .section { margin-bottom:20px; }
+    h2 { color:#2c3e50; border-bottom:1px solid #e1e4e8; padding-bottom:5px; }
+    .item { margin-bottom:15px; }
+    .meta { font-size:12px; color:#777; }
+    .tweet-summary { margin:10px 0; font-style:italic; background:#eef; padding:8px; border-radius:4px; }
+    a { color:#1d6fa5; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📰 Weekly AI-Agent Newsletter {{ data.keyword }}</h1>
+      <div class="summary">
+      <h2> 📑 Summary</h2>
+      {{ summary }}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🗞️ Top News API Articles</h2>
+      {% for art in data.articles %}
+      <div class="item">
+        <a href="{{ art.url }}"><strong>{{ art.title }}</strong></a>
+        <div class="meta">{{ art.source }} • {{ art.publishedAt }}</div>
+        <p>{{ art.description }}</p>
+        {% if art.tweet_summary %}
+        <div class="tweet-summary">{{ art.tweet_summary }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+      <h2>📚 Top AI-Agent Papers</h2>
+      {% for p in data.papers %}
+      <div class="item">
+        <a href="{{ p.url }}"><strong>{{ p.title }}</strong></a>
+        <div class="meta">{{ p.citations }} citations</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+      <h2>🛠️ Trending GitHub Repositories</h2>
+      {% for r in data.repos %}
+      <div class="item">
+        <a href="{{ r.url }}"><strong>{{ r.name }}</strong></a>
+        <div class="meta">{{ r.stars }}⭐ stars</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
